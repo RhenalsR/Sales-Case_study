@@ -13,7 +13,7 @@
 
 # ### Importing necessary Libraries
 
-# In[10]:
+# In[1]:
 
 
 # Data manipulation
@@ -27,7 +27,7 @@ import seaborn as sns
 
 # ### Importing the Dataset
 
-# In[5]:
+# In[2]:
 
 
 df = pd.read_excel('superstore_sales.xlsx')
@@ -35,14 +35,14 @@ df = pd.read_excel('superstore_sales.xlsx')
 
 # ### Checking Data
 
-# In[11]:
+# In[3]:
 
 
 # checking first 5 rows of the Dataset
 df.head(5)
 
 
-# In[12]:
+# In[4]:
 
 
 # checking last 5 rows of the Dataset
@@ -56,7 +56,17 @@ df.tail(5)
 df.info()
 
 
-# In[15]:
+# In[7]:
+
+
+# looking for duplicates
+duplicate = df[df.duplicated()]
+ 
+print("Duplicate Rows :")
+duplicate
+
+
+# In[8]:
 
 
 # Getting a descriptive statistic summary
@@ -164,10 +174,4 @@ cat_profit = pd.DataFrame(df.groupby(['category', 'sub_category']).sum()['profit
 
 
 cat_profit.sort_values(['category', 'profit'], ascending=False)
-
-
-# In[ ]:
-
-
-
 
