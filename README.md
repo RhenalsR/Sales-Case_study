@@ -38,14 +38,18 @@ Let's take a first sight of the data
 # checking first 5 rows of the Dataset
 df.head(5)
 ```
+![Preview of head limited to 5 rows](/head_table.png)
 ```
 # checking last 5 rows of the Dataset
 df.tail(5)
 ```
+![Preview of tail limited to 5 rows](/tail_table.png)
 ```
 # summary of the dataset
 df.info()
 ```
+![Preview of table description](/data_info.png)
+
 With this summary, I encountered this dataset is pretty clean, there are no Null values and the data types are correct. However, I'd rather to check duplicates before going further
 
 ```
@@ -61,7 +65,7 @@ No duplicate values were encountered. Lastly, let's check the descriptive statis
 # Getting a descriptive statistic summary
 df.describe()
 ```
-
+![Preview of table statistic summary description](/stat_summ.png)
 ## Analysis
 
 - What is the general sales trend?
@@ -91,7 +95,7 @@ plt.plot(df_trend['month_year'], df_trend['sales'])
 plt.xticks(rotation=45, size=8)    
 plt.show
 ```
-
+![Preview of sales trend viz](/py_viz.png)
 Answering the question:
 It's visible how sales trend is growing, sales are rising. We can also notice that sales get higher at the end of the year.
 
@@ -109,6 +113,7 @@ Checking the table, and here's the top 10:
 ```
 prod_sales[:10]
 ```
+![Preview of the top 10 products table](/top_10_table.png)
 - Which are the most selling products?
 ```
 # Grouping
@@ -122,6 +127,8 @@ Let's take the top 15 this time
 ```
 most_sell_prod[:15]
 ```
+![Preview of the 15 best sellers](/best_sell_table.png)
+
 - Which are the most profitable categories and sub-categories?
 ```
 cat_profit = pd.DataFrame(df.groupby(['category', 'sub_category']).sum()['profit'])
@@ -130,8 +137,9 @@ Result:
 ```
 cat_profit.sort_values(['category', 'profit'], ascending=False)
 ```
+![Preview of the most profitable categories and sub-categories](/cat_profit_table.png)
 
-Check out the Jupyter Notebook to further check the data table and outputs.
+Check out the Jupyter Notebook to further check the dataset, tables and outputs.
 
 ## Visualizing
 
@@ -139,16 +147,16 @@ Additionally, I'm creating some visualizations and a Dashboard with some filters
 
 Previously we've seen the overall sales trend, now I wanted to re-visualize within quarters instead of months and add the profit values to the viz.
 
- /// image
+ ![Preview of the Tableau viz](/Viz_1.png)
 
 Here we can also see the higher sales trend in the last quarter of each year.
 Now, I created a Dashboard to check specific values as the Stakeholders would like to see:
 
- /// Image
+![Preview of the Tableau Dashboard](/Dashboard.png)
 
 Let's now take a look at the trend of Phones sold in the US.
 
- /// Image
+![Preview of the Tableau Dashboard](/Dashboard_filt.png)
 
 Feel free to take a look at the [Tableau Dashboard](https://public.tableau.com/app/profile/ramses.rhenals/viz/Superstoresales_16929203324650/Dashboard1) and try some filters yourself, like the Art Sales in France.
 
