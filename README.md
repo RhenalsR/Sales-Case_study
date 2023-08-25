@@ -1,6 +1,6 @@
 # Sales-Case_study
 
-In this Case Study a Sales Dataset was used to respond to some business questions and analyse trends.
+In this Case Study a Sales Dataset was used to respond to some business questions and analyse trends using Python and Tableu.
 
 ### Questions for the Analysis
 - What is the general sales trend?
@@ -130,3 +130,26 @@ Result:
 ```
 cat_profit.sort_values(['category', 'profit'], ascending=False)
 ```
+
+Check out the Jupyter Notebook to further check the data table and outputs.
+
+## Visualizing
+
+Additionally, I'm creating some visualizations and a Dashboard with some filters using Tableau.
+
+Previously we've seen the overall sales trend, now I wanted to re-visualize within quarters instead of months and add the profit values to the viz.
+
+ /// image
+
+Here we can also see the higher sales trend in the last quarter of each year.
+Now, I created a Dashboard to check specific values as the Stakeholders would like to see:
+
+ /// Image
+
+Let's now take a look at the trend of Phones sold in the US.
+
+ /// Image
+
+Feel free to take a look at the [Tableau Dashboard](https://public.tableau.com/app/profile/ramses.rhenals/viz/Superstoresales_16929203324650/Dashboard1) and try some filters yourself, like the Art Sales in France.
+
+## _Thanks for reading!_
